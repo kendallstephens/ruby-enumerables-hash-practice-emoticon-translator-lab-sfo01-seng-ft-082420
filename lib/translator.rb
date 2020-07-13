@@ -23,21 +23,11 @@ end
 "Sorry, that emoticon was not found"
 end
 
-f get_english_meaning(file, jap_emo)
-  emoticons = load_library(file)
-  eng_meaning = ""
-  apology = "Sorry, that emoticon was not found"
-  emoticons.each do |emotion, lang|
-    lang.each do 
-    |inner_key, emoticon|
-    if emoticon[1] == j_emoticon
-      eng_meaning = emotion
-    end
+def get_english_meaning(file, jap_emo)
+  emoticons - load_library(file)
+  emoticons.each do |meaning, idioms|
+    return meaning if 
+    idioms[:japanese] == jap_emo
   end
-  if eng_meaning == ""
-    eng_meaning = apology
-  end
+  "Sorry, that emoticon was not found"
 end
-eng_meaning
-end
-de
