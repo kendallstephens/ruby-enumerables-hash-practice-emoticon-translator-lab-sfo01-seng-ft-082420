@@ -22,15 +22,6 @@ def get_japanese_emoticon(file, e_emoticon)
 end
 "Sorry, that emoticon was not found"
 end
-    puts value[:japanese]
-    j_equivalent = value[:japanese]
-  end
-end
-  if j_equivalent == ""
-    j_equivalent = apology
-    end
-  j_equivalent
-end
 
 
 def get_english_meaning(file, j_emoticon)
