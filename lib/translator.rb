@@ -14,7 +14,7 @@ result
 end
 end
 
-def get_japanese_emoticon(file, e_emoticon)
+def get_japanese_emoticon(file, eng_emo)
   emoticons = load_library(file)
   emoticons.each do |meaning, idioms|
     return idioms[:japanese] if
