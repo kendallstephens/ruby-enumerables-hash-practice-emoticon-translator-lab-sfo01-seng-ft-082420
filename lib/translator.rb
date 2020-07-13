@@ -24,7 +24,7 @@ end
 end
 
 def get_english_meaning(file, jap_emo)
-  emoticons - load_library(file)
+  emoticons = load_library(file)
   emoticons.each do |meaning, idioms|
     return meaning if 
     idioms[:japanese] == jap_emo
