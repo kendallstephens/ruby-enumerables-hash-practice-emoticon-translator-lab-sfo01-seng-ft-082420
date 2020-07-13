@@ -24,7 +24,7 @@ end
 end
 
 
-def get_english_meaning(file, j_emoticon)
+def get_english_meaning(file, jap_emo)
   emoticons = load_library(file)
   eng_meaning = ""
   apology = "Sorry, that emoticon was not found"
