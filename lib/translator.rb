@@ -1,13 +1,50 @@
 # require modules here
-
-def load_library
-  # code goes here
+require 'yaml'
+require 'pry'
+def load_library(file_path = 'lib/emoticons.yml')
+  emoticon_library = YAML.load_file(file_path)
+  result = emoticon_library.each_with_object({}) do |(key, value), final_hash|
+    if !final_hash[key] 
+      final_hash[key] = {
+      :english => value[0],
+      :japanese => value[1]
+       }
+end
+result
+end
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file, e_emoticon)
+  emoticons = load_library(file)
+  j_equivalent = ""
+  apology = "Sorry, that emoticon was not found"
+  emoticons.each do |key, value|
+  if value[:english] 
+    puts value[:japanese]
+    j_equivalent = value[:japanese]
+  end
+end
+  if j_equivalent == ""
+    j_equivalent = apology
+    end
+  j_equivalent
 end
 
-def get_english_meaning
-  # code goes here
+
+def get_english_meaning(file, j_emoticon)
+  emoticons = load_library(file)
+  eng_meaning = ""
+  apology = "Sorry, that emoticon was not found"
+  emoticons.each do |emotion, lang|
+    lang.each do 
+    |inner_key, emoticon|
+    if emoticon[1] == j_emoticon
+      eng_meaning = emotion
+    end
+  end
+  if eng_meaning == ""
+    eng_meaning = apology
+  end
+end
+eng_meaning
 end
