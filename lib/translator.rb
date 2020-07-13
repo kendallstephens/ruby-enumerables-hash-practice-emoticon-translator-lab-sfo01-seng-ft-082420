@@ -23,8 +23,7 @@ end
 "Sorry, that emoticon was not found"
 end
 
-
-def get_english_meaning(file, jap_emo)
+f get_english_meaning(file, jap_emo)
   emoticons = load_library(file)
   eng_meaning = ""
   apology = "Sorry, that emoticon was not found"
@@ -41,3 +40,4 @@ def get_english_meaning(file, jap_emo)
 end
 eng_meaning
 end
+de
